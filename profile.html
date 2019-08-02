@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/animsition.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<!--body-->
+<div id="overlay" class="overlay">
+  <h1>Loading...</h1>
+  <div class="loader"></div>
+</div>
+<body class="animsition">
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html">
+                <div id="logo">
+                </div>
+            </a>
+            <div class="menu">
+                <!-- desktop navbar -->
+                <nav class="desktop-nav">
+                    <ul class="first-level">
+                        <li><a href="dashboard.html" class="animsition-link">Home</a></li>
+                        <li><a href="about.html" class="animsition-link">about FECI</a></li>
+                        <li><a href="faqs.html" class="animsition-link">FAQs</a></li>
+                        <li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
+                        <li>
+                            <a id="loginLi" href="#">Login</a>
+                        </li>
+                        <div class="bubble" id="loginBubble" data-tooltip="0">
+                            <form id='loginForm' action="#" method="post">
+                                <div class="input_4">
+                                    <input id=txtEmail type="text" name="user name" autocomplete="off" placeholder="User Name">
+                                </div>
+                                <div class="input_4">
+                                    <input id=txtPassword name="password" type="password" placeholder="Password">
+                                </div>
+                                <a id="btnLogin" href="#" class="btn white2"><span>Login</span></a>
+                                <p>
+                                  Forgot password?
+                                </p>
+                                <div class="arrow"></div>
+                        </div>
+                        <li><a id="logoutLi" href="#">Profile</a></li>
+                        <div class="bubble2" id="logoutBubble" data-tooltip="0">
+                            <div class="arrow2"></div>
+                            <div class="name"></div>
+                            <div class="lastName"></div>
+                            <a href="#" class="editProfile">
+                                <img id="profileImage" src="" alt="" />
+                                <span>Edit Profile</span>
+                            </a>
+                            <a id="btnLogout" href="#" class="btn white2"><span>Logout</span></a>
+                        </div>
+                    </ul>
+                </nav>
+                <!-- mobile navbar -->
+                <nav class="mobile-nav"></nav>
+                <div class="menu-icon">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="site-hero_2">
+        <div class="col-md-12">
+        </div>
+        <a href="index.html">
+        </a>
+        <div class="page-title">
+            <div class="big-title montserrat-text uppercase">
+                <div id="titleName">
+                </div>
+                <div id="titleLastName">
+                </div>
+            </div>
+            <div class="small-title montserrat-text uppercase">HOME/Profile</div>
+        </div>
+    </div>
+    <section>
+        <div class="section-title">
+            <span>User Profile</span>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div id="successImage" class="alert alert-success">
+                    <strong>Success! </strong>Image Updated!
+                </div>
+                <div id="successInfo" class="alert alert-success">
+                    <strong>Success! </strong>Information Updated!
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="white-section">
+                            <div class="row">
+                                <form action="#" method="post">
+                                    <div class="col-md-6">
+                                        <div class="input_1" style="margin-bottom:30px">
+                                            <input id="name" value="" type="text" name="Name" autocomplete="off" readonly="readonly">
+                                            <span class="active">Name</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_1" style="margin-bottom:30px">
+                                            <input id="lastName" value="" type="text" name="Last Name" autocomplete="off" readonly="readonly">
+                                            <span class="active">Last Name</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_1" style="margin-bottom:30px">
+                                            <input id="secondLastName" value="" type="text" name="second Last Name" autocomplete="off" readonly="readonly">
+                                            <span class="active">Second Last Name</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_1" style="margin-bottom:30px">
+                                            <input id="email" value="sropazo@uc.cl" type="text" name="Email" autocomplete="off" readonly="readonly">
+                                            <span class="active">Email</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_1" style="margin-bottom:30px">
+                                            <input id="supervisor" value="" type="text" name="supervisor" autocomplete="off" readonly="readonly">
+                                            <span class="active">Supervisor</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input_1" style="margin-bottom:30px">
+                                            <input id="program" value="" type="text" name="program" autocomplete="off" readonly="readonly">
+                                            <span class="active">Program</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <a id="editInfo" class="btn green2"><span>Edit Information</span></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <a class="tooltips_item4 wow fadeInUp">
+                        <div>
+                            <h3>Profile Picture</h3>
+                            <img id="profileImage2" src="" alt="" />
+                        </div>
+                        <div class="tooltips_item_hover">
+                            <div class="item_info">
+                                <span>Edit Profile Picture</span>
+                                <em id="editPicture"><div class="edit2"></div>EDIT</em>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- signup Info -->
+    <section id="signupInfo" class="green-section wow fadeInUp" style="padding:50px 0">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="white-section" style="padding:20px">
+                        <span class="montserrat-text uppercase" style="font-size:24px">Create a New User</span>
+                        <p>
+                            Create Your Account with the Code that your Instructor Gave you.
+                        </p>
+                        <div class="row">
+                            <form action="#" method="post">
+                                <div class="col-md-6">
+                                    <div class="input_1" style="margin-bottom:30px">
+                                        <input id="signupEmail" type="text" name="Email" autocomplete="off">
+                                        <span>Email</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_1" style="margin-bottom:30px">
+                                        <input id="signupName" type="text" name="Name" autocomplete="off">
+                                        <span>Name</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_1" style="margin-bottom:30px">
+                                        <input id="signupLastName" type="text" name="Last Name" autocomplete="off">
+                                        <span>Last Name</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_1" style="margin-bottom:30px">
+                                        <input id="signupSecondLastName" type="text" name="Second Last Name" autocomplete="off">
+                                        <span>Second Last Name</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_1" style="margin-bottom:15px">
+                                        <input id="signupSupervisor" type="text" name="email" autocomplete="off">
+                                        <span>Supervisor</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_1" style="margin-bottom:15px">
+                                        <input id="signupCode" type="text" name="code" autocomplete="off">
+                                        <span>Security Code</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_3" style="margin-bottom:15px">
+                                        <input id="signupPassword" type="password" name="password" autocomplete="off">
+                                        <span>Password</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input_3" style="margin-bottom:15px">
+                                        <input id="signupPassword2" type="password" name="password2" autocomplete="off">
+                                        <span>Repeat Password</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <h4 class="selectTitle">Program</h4>
+                                    <select id="signupProgram" name="program">
+                                      <option value="Masters 2015">Select</option>
+                                      <option value="Masters 2015">Masters 2015</option>
+                                      <option value="Masters 2016">Masters 2016</option>
+                                      <option value="Masters 2017">Masters 2017</option>
+                                      <option value="Internship">Internship</option>
+                                      <option value="Certificate 2015">Certificate 2015</option>
+                                      <option value="Certificate 2016">Certificate 2016</option>
+                                      <option value="Certificate 2017">Certificate 2017</option>
+                                      <option value="Supervisor">Supervisor</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <a id="btnSignUp" href="#" class="btn green"><span>Sign Up	</span></a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="main-footer wow fadeInUp">
+        <div class="container">
+            <div class="col-md-8 col-sm-12">
+                <div class="row">
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="index.html" class="animsition-link link">Home</a></li>
+                            <li><a href="about.html" class="animsition-link link">about FECI</a></li>
+                            <li><a href="faqs.html" class="animsition-link link">FAQs</a></li>
+                            <li><a href="techSupport.html" class="animsition-link link">Tech Support</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12" style="text-align:right">
+                <div class="row">
+                    <div class="uppercase gray-text">
+                        created by Sebastian Opazo.
+                    </div>
+                    <ul class="social-icons" style="margin-top:30px;float:right">
+                        <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon ion-social-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--hidden lightbox form for adding profile information-->
+    <div id="light" class="white_content">
+        <h2 class="small-title montserrat-text uppercase">
+			Edit Profile Information:
+		<h2>
+        <div class="row">
+                    <form id="userInfo" action="#" method="post">
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="name2" value="" type="text" name="Name" autocomplete="off">
+                                <span class="active">Name</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="lastName2" value="" type="text" name="Last Name" autocomplete="off">
+                                <span class="active">Last Name</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="secondLastName2" value="" type="text" name="second Last Name" autocomplete="off">
+                                <span class="active">Second Last Name</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="email2" value="" type="text" name="Email" autocomplete="off" >
+                                <span class="active">Email</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="supevisor2" value="" type="text" name="supervisor" autocomplete="off" >
+                                <span class="active">Supervisor</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h4 id="selectTitle">Program</h4>
+                            <select name="program">
+                              <option value="Masters 2015">Select</option>
+                              <option value="Masters 2015">Masters 2015</option>
+                              <option value="Masters 2016">Masters 2016</option>
+                              <option value="Masters 2017">Masters 2017</option>
+                              <option value="Internship">Internship</option>
+                              <option value="Certificate 2015">Certificate 2015</option>
+                              <option value="Certificate 2016">Certificate 2016</option>
+                              <option value="Certificate 2017">Certificate 2017</option>
+                              <option value="Supervisor">Supervisor</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            	<a id="submitInfo" class="btn green2">Save</a>
+                              <a href="javascript:void(0)" onclick="$('#light').fadeOut('fast');$('#fade').fadeOut('fast')" class="btn green2">Cancel</a>
+                        </div>
+                    </form>
+
+        </div>
+	</div>
+	<div id="fade" class="black_overlay"></div>
+  <!--hidden lightbox to add profile pic-->
+        <div id="light5" class="white_content">
+          <div class="centerLightbox">
+            <h2 class="small-title montserrat-text uppercase">
+                Change Profile Picture
+            <h2>
+            <div class="col-md-6">
+              <img id="profileImage3" src="" alt="" />
+              <h4>Upload New Picture</h4>
+              <input id="uploadImage" type="file" accept="image/*">
+              <div class="progress" id="loader">
+                <div id="loaderBar" class="progress-bar progress-bar-striped active" role="progressbar" style="width: 0%; background-color: #84aabc">0%</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h4>
+                  Edit Profile Picture:
+              <h4>
+            </div>
+            <div class="col-md-12">
+              <a id="updateImage" class="btn green2">Save Changes</a>
+              <a href="javascript:void(0)" onclick="$('#light5').fadeOut('fast');$('#fade5').fadeOut('fast')" class="btn green2">Cancel</a>
+            </div>
+        </div>
+  </div>
+  <div id="fade5" class="black_overlay"></div>
+
+	<!-- SCRIPTS -->
+	<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
+	<script type="text/javascript" src="assets/js/wow.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/fecianalyst.js"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			new WOW().init();
+		});
+	</script>
+  <script type="text/javascript">
+    //get profile information from firebase
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+    	if (firebaseUser) {
+    		//get current user UID
+    		var currentUserUID = firebaseUser.uid;
+    		const dbrefUserInfo = firebase.database().ref('users').child(currentUserUID);
+          dbrefUserInfo.on('value', function(userSnapshot) {
+          var info = userSnapshot.val();
+          var userInfo = Object.values(info);
+          $("#name").val(userInfo[2]);
+          $("#lastName").val(userInfo[1]);
+          $("#secondLastName").val(userInfo[5]);
+          $("#email").val(userInfo[0]);
+          $("#supervisor").val(userInfo[6]);
+          $("#program").val(userInfo[4]);
+          $("#name2").val(userInfo[2]);
+          $("#lastName2").val(userInfo[1]);
+          $("#secondLastName2").val(userInfo[5]);
+          $("#email2").val(userInfo[0]);
+          $("#supevisor2").val(userInfo[6]);
+        }, function(error) {
+            console.log(error);
+        });
+      }
+      })
+    //edit personal info with lightbox
+    $("#editInfo").click(function(){
+      $('#light').fadeIn('fast');
+      $('#fade').fadeIn('fast');
+    });
+
+    //submit new info to firebase
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+      if (firebaseUser) {
+        $("#submitInfo").click(function(){
+          var currentUserUID = firebaseUser.uid;
+          var userFormArray = [];
+          const postRefUser = firebase.database().ref('users').child(currentUserUID);
+        $("#successInfo").fadeIn('fast').delay(2000).fadeOut("fast");
+        $('#light').fadeOut('fast');
+        $('#fade').fadeOut('fast');
+        for (var i = 0; i < 6; i++) {
+					var userInput = document.getElementById('userInfo').elements[i].value;
+          userFormArray.push(userInput);
+        }
+        function userInfoArrayToObject (array) {
+					var userInfoObject = {"email" : array[3], "lastName" : array[1], "name" : array[0], "program" : array[5], "secondLastName" : array[2], "supervisor" : array[4]}
+					postRefUser.update(userInfoObject);
+				}
+        userInfoArrayToObject(userFormArray);
+        })
+      }
+    });
+    //upload profile image to firebase==========================================
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+          var currentUserUID = firebaseUser.uid;
+        //edit profile image with lightbox
+          $("#editPicture").click(function(){
+            $("#uploadImage").val('');
+            $('#light5').fadeIn('fast');
+            $('#fade5').fadeIn('fast');
+          });
+        //when upload with upload file input, update thubmbail.
+        document.getElementById("uploadImage").onchange = function (e) {
+        var reader = new FileReader();
+        file = e.target.files[0]; //update this variable for latter use
+        reader.onload = function (e) {
+            // get loaded data and render thumbnail.
+            document.getElementById("profileImage3").src = e.target.result;
+        };
+
+        // read the image file as a data URL.
+        reader.readAsDataURL(this.files[0]);
+        };
+        //when click on save, show upload bar and wait till upload is done. Then, close lighbox and show success or fail message respectively.
+        var loaderBar = document.getElementById('loaderBar');
+        var updateImage = document.getElementById('updateImage');
+        updateImage.addEventListener('click', function (){
+        //make reference to firebase storage
+        var storageRef = firebase.storage().ref(currentUserUID + '/profilePic/' + file.name);
+        //make reference to firebase database key
+        var dbRef = firebase.database().ref('users/' + currentUserUID + "/profilePic");
+        //make reference to current image path
+        dbRef.on('value', function(imageSnapshot){
+          var imagePath = imageSnapshot.val();
+          //delete current image
+          var currentImgRef = firebase.storage().ref(currentUserUID + '/profilePic/' + imagePath)
+          if (imagePath != "") {
+            currentImgRef.delete().then(function() {
+            // When File deleted successfully Upload new image
+              var task = storageRef.put(file);
+              //Update progress
+              $("#loader").fadeIn('fast');
+              task.on('state_changed', function progress(snapshot) {
+                var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                $('#loaderBar').text(percentage + '%');
+                $('#loaderBar').attr('aria-valuenow', percentage + '%').css('width', percentage + '%');
+              }, function error(error){
+                  window.alert(error);
+                  //on error, show failure div.
+                }, function complete(){
+                  //on complete, update image path to current image and refresh page
+                  dbRef.set(file.name);
+                  location.reload();
+              });
+          }).catch(function(error) {
+          window.alert(error)
+            })
+          } else {
+            var task = storageRef.put(file);
+            //Update progress
+            $("#loader").fadeIn('fast');
+            task.on('state_changed', function progress(snapshot) {
+              var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              $('#loaderBar').text(percentage + '%');
+              $('#loaderBar').attr('aria-valuenow', percentage + '%').css('width', percentage + '%');
+            }, function error(error){
+                window.alert(error);
+                //on error, show failure div.
+              }, function complete(){
+                //on complete, update image path to current image and refresh page
+                dbRef.set(file.name);
+                location.reload();
+            });
+          }
+
+          });
+        })
+      }
+    });
+
+  </script>
+</body>
+
+</html>

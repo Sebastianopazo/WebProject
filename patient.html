@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Patient Profile</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/ionicons.min.css">
+	<link rel="stylesheet" href="assets/css/animsition.min.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<!--body-->
+<div id="overlay" class="overlay">
+	<h1>Loading...</h1>
+	<div class="loader"></div>
+</div>
+
+<body class="animsition">
+	<header class="main-header">
+		<div class="container">
+			<a href="index.html">
+				<div id="logo">
+				</div>
+			</a>
+			<div class="menu">
+				<!-- desktop navbar -->
+				<nav class="desktop-nav">
+					<ul class="first-level">
+						<li><a href="dashboard.html" class="animsition-link">Home</a></li>
+						<li><a href="about.html" class="animsition-link">about FECI</a></li>
+						<li><a href="faqs.html" class="animsition-link">FAQs</a></li>
+						<li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
+						<li>
+							<a id="loginLi" href="#">Login</a>
+						</li>
+						<div class="bubble" id="loginBubble" data-tooltip="0">
+							<form id='loginForm' action="#" method="post">
+								<div class="input_4">
+									<input id=txtEmail type="text" name="user name" autocomplete="off" placeholder="User Name">
+								</div>
+								<div class="input_4">
+									<input id=txtPassword name="password" type="password" placeholder="Password">
+								</div>
+								<a id="btnLogin" href="#" class="btn white2"><span>Login</span></a>
+								<p>
+									Forgot password?
+								</p>
+								<div class="arrow"></div>
+						</div>
+						<li><a id="logoutLi" href="#">Profile</a></li>
+						<div class="bubble2" id="logoutBubble" data-tooltip="0">
+							<div class="arrow2"></div>
+							<div class="name"></div>
+							<div class="lastName"></div>
+							<a href="profile.html" class="editProfile">
+								<img id="profileImage" src="" alt="" />
+								<span>Edit Profile</span>
+							</a>
+							<a id="btnLogout" href="#" class="btn white2"><span>Logout</span></a>
+						</div>
+					</ul>
+				</nav>
+				<!-- mobile navbar -->
+				<nav class="mobile-nav"></nav>
+				<div class="menu-icon">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="site-hero_2">
+		<div class="page-title">
+			<div class="big-title montserrat-text uppercase">
+				Sebastian Opazo
+			</div>
+			<div class="small-title montserrat-text uppercase">HOME/Dashboard/Patient Profile</div>
+		</div>
+	</div>
+	<section>
+		<div class="container">
+			<div class="section-title">
+				<span id="patientName"></span>
+				<div id="patientLastName"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<a href="javascript:void(0)" onclick="$('#light').fadeIn('fast');$('#fade').fadeIn('fast');" class="btn green">
+						<div class="edit2"></div><span>Edit Info</span></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="widget wow fadeInUp">
+					<ul class="list_2">
+						<li>
+							<div href="">Name<span>Carlos</span></div>
+						</li>
+						<li>
+							<div href="">Last Name<span>Cruz</span></div>
+						</li>
+						<li>
+							<div href="">Second Lastname<span>Navarrete</span></div>
+						</li>
+						<li>
+							<div href="">Age<span>15</span></div>
+						</li>
+						<li>
+							<div href="">Record Number<span>1313421</span></div>
+						</li>
+						<li>
+							<div href="">Intake Date<span>3/3/2013</span></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="section-title">
+			<span>Measures</span>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<a href="javascript:void(0)" onclick="$('#light2').fadeIn('fast');$('#fade2').fadeIn('fast');" class="btn green"><span>Add Measure</span></a>
+				</div>
+			</div>
+			<div id="noMeasures" class="alert alert-info">
+				<strong>There are no measures recorded for this patient</strong>
+				<div class="">
+					Add Measure
+				</div>
+			</div>
+			<div class="row">
+				<div class="widget wow fadeInUp">
+					<ul id="measureList" class="list_6">
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<a href="dashboard.html" class="btn green2"><span>Back to Dashboard</span></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- signup Info -->
+	<section id="signupInfo" class="green-section wow fadeInUp" style="padding:50px 0">
+		<div class="container">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="white-section" style="padding:20px">
+						<span class="montserrat-text uppercase" style="font-size:24px">Create a New User</span>
+						<p>
+							Create Your Account with the Code that your Instructor Gave you.
+						</p>
+						<div class="row">
+							<form action="#" method="post">
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:30px">
+										<input id="signupEmail" type="text" name="Email" autocomplete="off">
+										<span>Email</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:30px">
+										<input id="signupName" type="text" name="Name" autocomplete="off">
+										<span>Name</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:30px">
+										<input id="signupLastName" type="text" name="Last Name" autocomplete="off">
+										<span>Last Name</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:30px">
+										<input id="signupSecondLastName" type="text" name="Second Last Name" autocomplete="off">
+										<span>Second Last Name</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:15px">
+										<input id="signupSupervisor" type="text" name="email" autocomplete="off">
+										<span>Supervisor</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_1" style="margin-bottom:15px">
+										<input id="signupCode" type="text" name="code" autocomplete="off">
+										<span>Security Code</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_3" style="margin-bottom:15px">
+										<input id="signupPassword" type="password" name="password" autocomplete="off">
+										<span>Password</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input_3" style="margin-bottom:15px">
+										<input id="signupPassword2" type="password" name="password2" autocomplete="off">
+										<span>Repeat Password</span>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<h4 class="selectTitle">Program</h4>
+									<select id="signupProgram" name="program">
+																		<option value="Masters 2015">Select</option>
+																		<option value="Masters 2015">Masters 2015</option>
+																		<option value="Masters 2016">Masters 2016</option>
+																		<option value="Masters 2017">Masters 2017</option>
+																		<option value="Internship">Internship</option>
+																		<option value="Certificate 2015">Certificate 2015</option>
+																		<option value="Certificate 2016">Certificate 2016</option>
+																		<option value="Certificate 2017">Certificate 2017</option>
+																		<option value="Supervisor">Supervisor</option>
+																	</select>
+								</div>
+								<div class="col-md-12">
+									<a id="btnSignUp" href="#" class="btn green"><span>Sign Up	</span></a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- FOOTER -->
+	<footer class="main-footer wow fadeInUp">
+		<div class="container">
+			<div class="col-md-8 col-sm-12">
+				<div class="row">
+					<nav class="footer-nav">
+						<ul>
+							<li><a href="index.html" class="animsition-link link">Home</a></li>
+							<li><a href="about.html" class="animsition-link link">about FECI</a></li>
+							<li><a href="faqs.html" class="animsition-link link">FAQs</a></li>
+							<li><a href="techSupport.html" class="animsition-link link">Tech Support</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12" style="text-align:right">
+				<div class="row">
+					<div class="uppercase gray-text">
+						created by Sebastian Opazo.
+					</div>
+					<ul class="social-icons" style="margin-top:30px;float:right">
+						<li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
+						<li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
+						<li><a href="#"><i class="icon ion-social-youtube"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--hidden lightbox form for editing patients-->
+	<div id="light" class="white_content">
+		<h2 class="small-title montserrat-text uppercase">
+			Edit Patient Information:
+		<h2>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" value="Carlos" name="Carlos" autocomplete="off" readonly="readonly">
+			<span class="active">Name</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Last Name" value="Cruz" autocomplete="off"  readonly="readonly">
+			<span class="active">Last Name</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Second Last Name" value="Navarrete" autocomplete="off"  readonly="readonly">
+			<span class="active">Second Last Name</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Age" value="15" autocomplete="off"  readonly="readonly">
+			<span class="active">Age</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="text" name="Record Number" value="1313421" autocomplete="off"  readonly="readonly">
+			<span class="active">Record Number</span>
+		</div>
+		<div class="input_1" style="margin-bottom:30px">
+			<input type="date" name="Intake date" value="2013-03-03" autocomplete="off">
+				<span class="active">Intake Date</span>
+		</div>
+		<a href="javascript:void(0)" onclick="$('#light').fadeOut('fast');$('#fade').fadeOut('fast')" class="btn green2">Save Changes</a>
+				<a href="javascript:void(0)" onclick="$('#light').fadeOut('fast');$('#fade').fadeOut('fast')" class="btn green2">Edit Information</a>
+		<a href="javascript:void(0)" onclick="$('#light').fadeOut('fast');$('#fade').fadeOut('fast')" class="btn green2">Close</a>
+	</div>
+	<div id="fade" class="black_overlay"></div>
+	<!--end of Lightbox-->
+	<!--hidden lightbox form for adding measures-->
+	<div id="light2" class="white_content">
+		<h2 class="small-title montserrat-text uppercase">
+			Add Measures:
+		<h2>
+	<select name="measures">
+		 <option value="choose">Choose an option</option>
+     <option value="EPQ">Eysenck's EPQ</option>
+     <option value="saab">Rathus Assertiveness Schedule</option>
+   </select>
+		<a href="javascript:void(0)" onclick="$('#light2').fadeOut('fast');$('#fade2').fadeOut('fast')" class="btn green2">Save Changes</a>
+				<a href="javascript:void(0)" onclick="$('#light2').fadeOut('fast');$('#fade2').fadeOut('fast')" class="btn green2">Start Measure</a>
+		<a href="javascript:void(0)" onclick="$('#light2').fadeOut('fast');$('#fade2').fadeOut('fast')" class="btn green2">Close</a>
+	</div>
+	<div id="fade2" class="black_overlay"></div>
+	<!--end of Lightbox-->
+	<!--hidden lightbox form for adding epq-->
+	<div id="light3" class="white_content">
+		<h2 class="small-title montserrat-text uppercase">
+			Add EPQ Information:
+		<h2>
+			<!--Question -->
+				<div class="row">
+					<ul class="list_5">
+						<li>
+							<div>
+								<p>
+									1.-Do you often long for excitement?
+								</p>
+								<div>
+									<input type="radio" name="radio" id="radio1" class="radio"/>
+	            		<label for="radio1">Yes</label>
+								</div>
+								<div>
+									<input type="radio" name="radio" id="radio2" class="radio"/>
+		            	<label for="radio2">No</label>
+								</div>
+								<div>
+									<input type="radio" name="radio" id="radio3" class="radio"/>
+            				<label for="radio3">Not answered</label>
+									</div>
+								</div>
+						</li>
+					</ul>
+				</div>
+				<!--End Of Question -->
+				<!--Question -->
+					<div class="row">
+						<ul class="list_5">
+							<li>
+								<div>
+									<p>
+										2.-Do you often need understanding friends to cheer you up?
+									</p>
+									<div>
+										<input type="radio" name="radio" id="radio1" class="radio"/>
+		            		<label for="radio1">Yes</label>
+									</div>
+									<div>
+										<input type="radio" name="radio" id="radio2" class="radio"/>
+			            	<label for="radio2">No</label>
+									</div>
+									<div>
+										<input type="radio" name="radio" id="radio3" class="radio"/>
+	            				<label for="radio3">Not answered</label>
+										</div>
+									</div>
+							</li>
+						</ul>
+					</div>
+					<!--End Of Question -->
+					<!--Question -->
+						<div class="row">
+							<ul class="list_5">
+								<li>
+									<div>
+										<p>
+											3.- Are you usually carefree?
+										</p>
+										<div>
+											<input type="radio" name="radio" id="radio1" class="radio"/>
+			            		<label for="radio1">Yes</label>
+										</div>
+										<div>
+											<input type="radio" name="radio" id="radio2" class="radio"/>
+				            	<label for="radio2">No</label>
+										</div>
+										<div>
+											<input type="radio" name="radio" id="radio3" class="radio"/>
+		            				<label for="radio3">Not answered</label>
+											</div>
+										</div>
+								</li>
+							</ul>
+						</div>
+						<!--End Of Question -->
+						<!--Question -->
+							<div class="row">
+								<ul class="list_5">
+									<li>
+										<div>
+											<p>
+												4.- Do you find it very hard to take no for answer?
+											</p>
+											<div>
+												<input type="radio" name="radio" id="radio1" class="radio"/>
+												<label for="radio1">Yes</label>
+											</div>
+											<div>
+												<input type="radio" name="radio" id="radio2" class="radio"/>
+												<label for="radio2">No</label>
+											</div>
+											<div>
+												<input type="radio" name="radio" id="radio3" class="radio"/>
+													<label for="radio3">Not answered</label>
+												</div>
+											</div>
+									</li>
+								</ul>
+							</div>
+							<!--End Of Question -->
+							<!--Question -->
+								<div class="row">
+									<ul class="list_5">
+										<li>
+											<div>
+												<p>
+													5.- Do you stop and think things over before doing anything?
+												</p>
+												<div>
+													<input type="radio" name="radio" id="radio1" class="radio"/>
+													<label for="radio1">Yes</label>
+												</div>
+												<div>
+													<input type="radio" name="radio" id="radio2" class="radio"/>
+													<label for="radio2">No</label>
+												</div>
+												<div>
+													<input type="radio" name="radio" id="radio3" class="radio"/>
+														<label for="radio3">Not answered</label>
+													</div>
+												</div>
+										</li>
+									</ul>
+								</div>
+								<!--End Of Question -->
+				<a href="carlosCruzEpq.html" class="btn green2">Save</a>
+				<a href="javascript:void(0)" onclick="$('#light3').fadeOut('fast');$('#fade3').fadeOut('fast')" class="btn green2">Close</a>
+		</div>
+		<div id="fade3" class="black_overlay"></div>
+		<!--end of Lightbox-->
+		<!--hidden lightbox form for adding Rathus Assertiveness Schedule-->
+		<div id="light4" class="white_content">
+			<h2 class="small-title montserrat-text uppercase">
+				Add Rathus Assertiveness Schedule Information:
+			<h2>
+				<!--Question -->
+					<div class="row">
+						<ul class="list_5">
+							<li>
+								<div>
+									<p>
+										1.-A lot of people seems to be more agressive and secure than I am.
+									</p>
+									<div>
+										<input type="radio" name="radio" id="radio10" class=""/>
+		            		<label for="radio10">very much like me</label>
+									</div>
+									<div>
+										<input type="radio" name="radio" id="radio11" class=""/>
+			            	<label for="radio11">rather like me</label>
+									</div>
+									<div>
+										<input type="radio" name="radio" id="radio3" class=""/>
+	            				<label for="radio3">slighly unlike me</label>
+									</div>
+									<div>
+										<input type="radio" name="radio" id="radio3" class=""/>
+		            		<label for="radio3">slightly unlike me</label>
+									</div>
+									<div>
+										<input type="radio" name="radio" id="radio3" class=""/>
+			            	<label for="radio3">rather unlike me</label>
+									</div>
+									<div>
+										<input type="radio" name="radio" id="radio3" class=""/>
+				            <label for="radio3">very much unlike me</label>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!--End Of Question -->
+					<!--Question -->
+						<div class="row">
+							<ul class="list_5">
+								<li>
+									<div>
+										<p>
+											2.- I hesitate asking someone out because I'm shy.
+										</p>
+										<div>
+											<input type="radio" name="radio" id="radio10" class=""/>
+			            		<label for="radio10">very much like me</label>
+										</div>
+										<div>
+											<input type="radio" name="radio" id="radio11" class=""/>
+				            	<label for="radio11">rather like me</label>
+										</div>
+										<div>
+											<input type="radio" name="radio" id="radio3" class=""/>
+		            				<label for="radio3">slighly unlike me</label>
+										</div>
+										<div>
+											<input type="radio" name="radio" id="radio3" class=""/>
+			            		<label for="radio3">slightly unlike me</label>
+										</div>
+										<div>
+											<input type="radio" name="radio" id="radio3" class=""/>
+				            	<label for="radio3">rather unlike me</label>
+										</div>
+										<div>
+											<input type="radio" name="radio" id="radio3" class=""/>
+					            <label for="radio3">very much unlike me</label>
+										</div>
+										</div>
+								</li>
+							</ul>
+						</div>
+						<!--End Of Question -->
+						<!--Question -->
+							<div class="row">
+								<ul class="list_5">
+									<li>
+										<div>
+											<p>
+												3.- People take advantage from me.
+											</p>
+											<div>
+												<input type="radio" name="radio" id="radio10" class=""/>
+				            		<label for="radio10">very much like me</label>
+											</div>
+											<div>
+												<input type="radio" name="radio" id="radio11" class=""/>
+					            	<label for="radio11">rather like me</label>
+											</div>
+											<div>
+												<input type="radio" name="radio" id="radio3" class=""/>
+			            				<label for="radio3">slighly unlike me</label>
+											</div>
+											<div>
+												<input type="radio" name="radio" id="radio3" class=""/>
+				            		<label for="radio3">slightly unlike me</label>
+											</div>
+											<div>
+												<input type="radio" name="radio" id="radio3" class=""/>
+					            	<label for="radio3">rather unlike me</label>
+											</div>
+											<div>
+												<input type="radio" name="radio" id="radio3" class=""/>
+						            <label for="radio3">very much unlike me</label>
+											</div>
+											</div>
+									</li>
+								</ul>
+							</div>
+							<!--End Of Question -->
+							<!--Question -->
+								<div class="row">
+									<ul class="list_5">
+										<li>
+											<div>
+												<p>
+													4.- I enjoy takling with people I know and also strangers.
+												</p>
+												<div>
+													<input type="radio" name="radio" id="radio10" class=""/>
+					            		<label for="radio10">very much like me</label>
+												</div>
+												<div>
+													<input type="radio" name="radio" id="radio11" class=""/>
+						            	<label for="radio11">rather like me</label>
+												</div>
+												<div>
+													<input type="radio" name="radio" id="radio3" class=""/>
+				            				<label for="radio3">slighly unlike me</label>
+												</div>
+												<div>
+													<input type="radio" name="radio" id="radio3" class=""/>
+					            		<label for="radio3">slightly unlike me</label>
+												</div>
+												<div>
+													<input type="radio" name="radio" id="radio3" class=""/>
+						            	<label for="radio3">rather unlike me</label>
+												</div>
+												<div>
+													<input type="radio" name="radio" id="radio3" class=""/>
+							            <label for="radio3">very much unlike me</label>
+												</div>
+												</div>
+										</li>
+									</ul>
+								</div>
+								<!--End Of Question -->
+								<!--Question -->
+									<div class="row">
+										<ul class="list_5">
+											<li>
+												<div>
+													<p>
+														5.- I avoid making questions because I fear seeming stupid.
+													</p>
+													<div>
+														<input type="radio" name="radio" id="radio10" class=""/>
+						            		<label for="radio10">very much like me</label>
+													</div>
+													<div>
+														<input type="radio" name="radio" id="radio11" class=""/>
+							            	<label for="radio11">rather like me</label>
+													</div>
+													<div>
+														<input type="radio" name="radio" id="radio3" class=""/>
+					            				<label for="radio3">slighly unlike me</label>
+													</div>
+													<div>
+														<input type="radio" name="radio" id="radio3" class=""/>
+						            		<label for="radio3">slightly unlike me</label>
+													</div>
+													<div>
+														<input type="radio" name="radio" id="radio3" class=""/>
+							            	<label for="radio3">rather unlike me</label>
+													</div>
+													<div>
+														<input type="radio" name="radio" id="radio3" class=""/>
+								            <label for="radio3">very much unlike me</label>
+													</div>
+													</div>
+											</li>
+										</ul>
+									</div>
+									<!--End Of Question -->
+					<a href="carlosCruzrathus.html" class="btn green2">Save</a>
+					<a href="javascript:void(0)" onclick="document.getElementById('light4').style.display='none';document.getElementById('fade4').style.display='none'" class="btn green2">Close</a>
+			</div>
+	<div id="fade4" class="black_overlay"></div>
+				<!--end of Lightbox-->
+	<!-- SCRIPTS -->
+	<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
+	<script type="text/javascript" src="assets/js/wow.min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/fecianalyst.js"></script>
+	<script type="text/javascript">
+		$(window).load(function() {
+			new WOW().init();
+		});
+	</script>
+	<script type="text/javascript">
+	//create function to filter and append measures to list
+	function addMeasuresToList (name, id, date) {
+		$("#measureList").append("<li class='measure'>" + name + date + "<span><a href='#" + id + ".html' class='bubble3 patientPage'><img src='images/edit.png'><span class='tooltiptext'>Edit Measure</span></a><span></li>");
+	}
+
+	//Read patient ID from URL
+	var a = location.href;
+	var ifFromUrl = a.substring(a.indexOf("?")+1);
+	currentPatientId = ifFromUrl.substring(0, ifFromUrl.lastIndexOf("."));
+firebase.auth().onAuthStateChanged(firebaseUser =>{
+	if (firebaseUser) {
+	//get current user UID
+	var currentUserUID = firebaseUser.uid;
+	//Show patient Name on page sub title
+	const dbRefPatientName = firebase.database().ref('allPatientList').child(currentUserUID).child('patientList').child(currentPatientId).child('name');
+	dbRefPatientName.on('value', function(nameSnapshot) {
+		  var space = document.createTextNode("\u00A0");
+			var lastName = JSON.stringify(nameSnapshot.val()).replace(/^"(.*)"$/, '$1');
+			$('#patientName').empty();
+			$('#patientName').append(lastName, space);
+	}, function(error) {
+			window.alert(error);
+	});
+	//Show patient Name on page sub title
+	const dbRefPatientLastName = firebase.database().ref('allPatientList').child(currentUserUID).child('patientList').child(currentPatientId).child('lastName');
+	dbRefPatientLastName.on('value', function(nameSnapshot) {
+		  var space = document.createTextNode("\u00A0");
+			var lastName = JSON.stringify(nameSnapshot.val()).replace(/^"(.*)"$/, '$1');
+			$('#patientName').append(lastName);
+	}, function(error) {
+			window.alert(error);
+	});
+	//reference to Patient Measures
+	const dbrefMeasures = firebase.database().ref('patientsMeasures').child(currentPatientId);
+	dbrefMeasures.on('value', function(snapshot) {
+		var measureList = snapshot.val();
+		//if the patient has no measures, show a message;
+		$("#measureList").empty();
+		if (measureList === "empty") {
+			$('#noMeasures').show();
+		} else{
+			$('#noMeasures').hide();
+		//loop to get all the patients' measures from database
+		var i = 0;
+			while (Object.keys(measureList)[i] != null) {
+				//get a specific Measure info
+				var currentMeasure = Object.keys(measureList);
+				var values = Object.values(measureList[currentMeasure]);
+				var name = values[1];
+				var date = values[0];
+				//append info to list
+				 addMeasuresToList(name, currentMeasure, date);
+					i++;
+				}
+			}
+			});
+		}		else {
+			 	window.location = 'index.html';
+	 }
+ });
+	</script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Dashboard</title>
+    <title>Patients</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -87,44 +87,34 @@
             <div class="small-title montserrat-text uppercase">HOME/Dashboard</div>
         </div>
     </div>
-    <!-- CONTENT -->
     <section>
+        <div class="section-title">
+            <span>Your Patients</span>
+        </div>
         <div class="container">
-    <div class="section-title">
-        <span>Your Dashboard</span>
-    </div>
-  </div>
-    <div class="col-md-12 col-md-offset-3">
-      <div class="col-md-3">
-        <div id="learn" class="text-center">
-          <h2>LEARN</h2>
-          <a href="learn.html" class="tooltips_item3 wow fadeInUp">
-            <img src="images/learn.png" alt="">
-            <div class="tooltips_item_hover">
-              <div class="item_info">
-                <span>LEARN ABOUT FECI</span>
-                <em>MORE</em>
-              </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <a id="addPatient" class="btn green2"><span>Add Patient</span></a>
+                    <a href="dashboard.html" class="btn green2"><span>Back to Dashboard</span></a>
+                </div>
+                <div class="col-md-2">
+                    <h5>Actions</h5>
+                </div>
             </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div id="yourPatients" class="text-center">
-          <h2>PATIENTS</h2>
-          <a href="patients.html" class="tooltips_item3 wow fadeInUp">
-            <img src="images/patients.png" alt="">
-            <div class="tooltips_item_hover">
-              <div class="item_info">
-                <span>Your Patients List</span>
-                <em>MORE</em>
-              </div>
+            <div class="row">
+                <div id="successPatient" class="alert alert-success">
+                    <strong>Success! </strong>Patient created!
+                </div>
+                <div id="noPatients" class="alert alert-info">
+                    <strong>You don't have any patients</strong>
+                </div>
+                <div class="col-md-12">
+                  <ul id="patientList" class="list_6"></ul>
+                </div>
             </div>
-          </a>
         </div>
-      </div>
-    </div>
     </section>
+  </form>
     <!-- signup Info -->
     <section id="signupInfo" class="green-section wow fadeInUp" style="padding:50px 0">
         <div class="container">
@@ -210,13 +200,13 @@
         </div>
     </section>
     <!-- FOOTER -->
-    <footer class="main-footer">
+    <footer class="main-footer wow fadeInUp">
         <div class="container">
             <div class="col-md-8 col-sm-12">
                 <div class="row">
                     <nav class="footer-nav">
                         <ul>
-                            <li><a href="index.html" class="animsition-link link">Home</a></li>
+                            <li><a href="dashboard.html" class="animsition-link link">Home</a></li>
                             <li><a href="about.html" class="animsition-link link">about FECI</a></li>
                             <li><a href="faqs.html" class="animsition-link link">FAQs</a></li>
                             <li><a href="techSupport.html" class="animsition-link link">Tech Support</a></li>
@@ -238,6 +228,44 @@
             </div>
         </div>
     </footer>
+
+    <!--hidden lightbox form for adding patients-->
+    <div id="light" class="white_content">
+        <h2 class="small-title montserrat-text uppercase">
+			Add Patient Information:
+		<h2>
+			<form id="patientInfo" action="index.html" method="post">
+				<div class="input_1" style="margin-bottom:30px">
+					<input type="text" name="Name" autocomplete="off">
+					<span>Name</span>
+				</div>
+				<div class="input_1" style="margin-bottom:30px">
+					<input type="text" name="Last Name" autocomplete="off">
+					<span>Last Name</span>
+				</div>
+				<div class="input_1" style="margin-bottom:30px">
+					<input type="text" name="Second Last Name" autocomplete="off">
+					<span>Second Last Name</span>
+				</div>
+				<div class="input_1" style="margin-bottom:30px">
+					<input type="text" name="Age" autocomplete="off">
+					<span>Age</span>
+				</div>
+				<div class="input_1" style="margin-bottom:30px">
+					<input type="text" name="Record Number" autocomplete="off">
+					<span>Record Number</span>
+				</div>
+				<div class="input_1" style="margin-bottom:30px">
+					<input type="date" name="Intake date" autocomplete="off">
+					<span class="active">Intake Date</span>
+				</div>
+			</form>
+
+		<a id="submitPatientInfo" class="btn green2">Save Information</a>
+		<a href="javascript:void(0)" onclick="$('#light').fadeOut('fast');$('#fade').fadeOut('fast')" class="btn green2">Close</a>
+	</div>
+	<div id="fade" class="black_overlay"></div>
+
 	<!-- SCRIPTS -->
 	<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
@@ -251,6 +279,83 @@
 		});
 	</script>
 	<script type="text/javascript">
+	//create function to filter and append name and lastnames from patients
+  function addNamesToList (array, id) {
+    $("#patientList").append("<li class='patient'>"+ array[3] + " " + array[2] + " " + array[5] + "<span><a href='patient.html?" + id + ".html' class='bubble3 patientPage'><img src='images/edit.png'><span class='tooltiptext'>Edit Patient</span></a><span></li>");
+  }
+//GET PATIENTS INFO============================================================
+
+//get current user patients list from database
+firebase.auth().onAuthStateChanged(firebaseUser =>{
+	if (firebaseUser) {
+		//get current user UID
+		var currentUserUID = firebaseUser.uid;
+		const dbrefPatients = firebase.database().ref('allPatientList').child(currentUserUID).child('patientList');
+		dbrefPatients.on('value', function(snapshot) {
+			var patientList = snapshot.val();
+      //if you have no patients, show a message;
+			$("#patientList").empty();
+      if (patientList === null) {
+        $('#noPatients').show();
+      } else{
+        $('#noPatients').hide();
+      //loop to get all patients from database
+      var i = 0;
+			while (Object.keys(patientList)[i] != null) {
+				//get a specific patient info
+				var currentPatientId = Object.keys(patientList)[i];
+				var patientToArray = Object.values(patientList[currentPatientId]);
+					//append info to list
+					addNamesToList(patientToArray, currentPatientId);
+					i++;
+				}}
+ 				}, function(error) {
+						console.log(error);
+		});
+
+//ADD PATIENTS =============================================================
+//add patient button
+$("#addPatient").click(function() {
+  $('#light').fadeIn('fast');
+  $('#fade').fadeIn('fast');
+  $('#patientInfo')[0].reset();
+});
+//upload information from Patient Form on completion
+			//turn inputs into array and the array into a "patient object"
+			var patientFormArray = [];
+			//when clicking on submit, submit info
+			$("#submitPatientInfo").click(function(){
+				for (var i = 0; i < 6; i++) {
+					var patientInput = document.getElementById("patientInfo").elements[i].value;
+						patientFormArray.push(patientInput);
+				}
+				//function to turn the array rom the form into an object that can be sent to firebase; also to upload to database
+				function patientInfoArrayToObject (array) {
+					var patientInfoObject = {"age" : array[3], "intakeDate" : array[5], "lastName" : array[1], "name" : array[0], "recordNumber" : array[4], "secondLastName" : array[2]};
+					var newPatientKey = firebase.database().ref('allPatientList').child(currentUserUID).child('patientList').push().key;
+           // Write the new Patient's ID simultaneously in the Patient list and the Measures list.
+          var updates = {};
+          updates['/patientsMeasures/' + newPatientKey] = "empty";
+          updates['/allPatientList/' + currentUserUID + '/patientList/' + newPatientKey] = patientInfoObject;
+          return firebase.database().ref().update(updates);
+				}
+				patientInfoArrayToObject(patientFormArray);
+				var lightBox1 = document.getElementById('light');
+				var fade = document.getElementById('fade');
+				lightBox1.style.display='none';
+				fade.style.display='none';
+				$("#successPatient").fadeIn('fast').delay(2000).fadeOut("fast");
+
+		});
+
+    } else {
+      window.location = 'index.html';
+    }
+
+    });
+
+
+
 </script>
 
 

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Dashboard</title>
+    <title>ResetEmailPass</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -27,13 +27,12 @@
                 <!-- desktop navbar -->
                 <nav class="desktop-nav">
                     <ul class="first-level">
-                        <li><a href="dashboard.html" class="animsition-link">Home</a></li>
+                        <li><a href="index.html" class="animsition-link">Home</a></li>
                         <li><a href="about.html" class="animsition-link">about FECI</a></li>
                         <li><a href="faqs.html" class="animsition-link">FAQs</a></li>
                         <li><a href="techSupport.html" class="animsition-link">Tech Support</a></li>
                         <li>
-                            <a id="loginLi" href="#">Login
-							</a>
+                            <a id="loginLi" href="#">Login</a>
                         </li>
                         <div class="bubble" id="loginBubble" data-tooltip="0">
                             <form id='loginForm' action="#" method="post">
@@ -54,7 +53,7 @@
                             <div class="arrow2"></div>
                             <div class="name"></div>
                             <div class="lastName"></div>
-                            <a href="profile.html" class="editProfile">
+                            <a href="#" class="editProfile">
                                 <img id="profileImage" src="" alt="" />
                                 <span>Edit Profile</span>
                             </a>
@@ -79,51 +78,40 @@
         </a>
         <div class="page-title">
             <div class="big-title montserrat-text uppercase">
-              <div id="titleName">
-              </div>
-              <div id="titleLastName">
-              </div>
+                feci analyst
             </div>
-            <div class="small-title montserrat-text uppercase">HOME/Dashboard</div>
+            <div class="small-title montserrat-text uppercase">Collect | Score | Learn</div>
         </div>
     </div>
-    <!-- CONTENT -->
     <section>
+        <div class="section-title">
+            <span>Reset Password</span>
+        </div>
         <div class="container">
-    <div class="section-title">
-        <span>Your Dashboard</span>
-    </div>
-  </div>
-    <div class="col-md-12 col-md-offset-3">
-      <div class="col-md-3">
-        <div id="learn" class="text-center">
-          <h2>LEARN</h2>
-          <a href="learn.html" class="tooltips_item3 wow fadeInUp">
-            <img src="images/learn.png" alt="">
-            <div class="tooltips_item_hover">
-              <div class="item_info">
-                <span>LEARN ABOUT FECI</span>
-                <em>MORE</em>
-              </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="white-section">
+                            <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="passForm">
+                                        <p>Plase input your email address. You'll receive a message to reset your password.</p>
+                                        <div class="input_1" style="margin-bottom:30px">
+                                            <input id="email" value="" type="text" name="Email" autocomplete="off">
+                                            <span>Email</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <a id="submitReset" class="btn green2"><span>Submit</span></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </a>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div id="yourPatients" class="text-center">
-          <h2>PATIENTS</h2>
-          <a href="patients.html" class="tooltips_item3 wow fadeInUp">
-            <img src="images/patients.png" alt="">
-            <div class="tooltips_item_hover">
-              <div class="item_info">
-                <span>Your Patients List</span>
-                <em>MORE</em>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
     </section>
     <!-- signup Info -->
     <section id="signupInfo" class="green-section wow fadeInUp" style="padding:50px 0">
@@ -210,7 +198,7 @@
         </div>
     </section>
     <!-- FOOTER -->
-    <footer class="main-footer">
+    <footer class="main-footer wow fadeInUp">
         <div class="container">
             <div class="col-md-8 col-sm-12">
                 <div class="row">
@@ -238,6 +226,94 @@
             </div>
         </div>
     </footer>
+
+    <!--hidden lightbox form for adding profile information-->
+    <div id="light" class="white_content">
+        <h2 class="small-title montserrat-text uppercase">
+			Edit Profile Information:
+		<h2>
+        <div class="row">
+                    <form id="userInfo" action="#" method="post">
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="name2" value="" type="text" name="Name" autocomplete="off">
+                                <span class="active">Name</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="lastName2" value="" type="text" name="Last Name" autocomplete="off">
+                                <span class="active">Last Name</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="secondLastName2" value="" type="text" name="second Last Name" autocomplete="off">
+                                <span class="active">Second Last Name</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="email2" value="" type="text" name="Email" autocomplete="off" >
+                                <span class="active">Email</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input_1" style="margin-bottom:30px">
+                                <input id="supevisor2" value="" type="text" name="supervisor" autocomplete="off" >
+                                <span class="active">Supervisor</span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h4 id="selectTitle">Program</h4>
+                            <select name="program">
+                              <option value="Masters 2015">Select</option>
+                              <option value="Masters 2015">Masters 2015</option>
+                              <option value="Masters 2016">Masters 2016</option>
+                              <option value="Masters 2017">Masters 2017</option>
+                              <option value="Internship">Internship</option>
+                              <option value="Certificate 2015">Certificate 2015</option>
+                              <option value="Certificate 2016">Certificate 2016</option>
+                              <option value="Certificate 2017">Certificate 2017</option>
+                              <option value="Supervisor">Supervisor</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            	<a id="submitInfo" class="btn green2">Save</a>
+                              <a href="javascript:void(0)" onclick="$('#light').fadeOut('fast');$('#fade').fadeOut('fast')" class="btn green2">Cancel</a>
+                        </div>
+                    </form>
+
+        </div>
+	</div>
+	<div id="fade" class="black_overlay"></div>
+  <!--hidden lightbox to add profile pic-->
+        <div id="light5" class="white_content">
+          <div class="centerLightbox">
+            <h2 class="small-title montserrat-text uppercase">
+                Change Profile Picture
+            <h2>
+            <div class="col-md-6">
+              <img id="profileImage3" src="" alt="" />
+              <h4>Upload New Picture</h4>
+              <input id="uploadImage" type="file" accept="image/*">
+              <div class="progress" id="loader">
+                <div id="loaderBar" class="progress-bar progress-bar-striped active" role="progressbar" style="width: 0%; background-color: #84aabc">0%</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h4>
+                  Edit Profile Picture:
+              <h4>
+            </div>
+            <div class="col-md-12">
+              <a id="updateImage" class="btn green2">Save Changes</a>
+              <a href="javascript:void(0)" onclick="$('#light5').fadeOut('fast');$('#fade5').fadeOut('fast')" class="btn green2">Cancel</a>
+            </div>
+        </div>
+  </div>
+  <div id="fade5" class="black_overlay"></div>
+
 	<!-- SCRIPTS -->
 	<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
@@ -250,9 +326,18 @@
 			new WOW().init();
 		});
 	</script>
-	<script type="text/javascript">
-</script>
+  <script type="text/javascript">
+    $("#submitReset").click(function() {
+    var email = $("#email").val();
+    console.log(typeof email);
+    firebase.auth().sendPasswordResetEmail(email).then(function(url) {
+        window.alert('Success! Email sent');
+    }).catch(function(error) {
+        window.alert(error);
+    });
 
+    });
+  </script>
 
 </body>
 

@@ -1,21 +1,73 @@
-/*
-	Javascript File for AKAD Template
-	Author : Akhouad-me
-	Web    : www.akhouad.me
-*/
+
+
+
+// login and logout bubble toggle; hide login and logout bubble when clicked outside
+
+$(document).click(function(e) {
+  if( e.target.id === 'loginLi') {
+    $('#loginBubble').fadeToggle('fast');
+    $('.arrow').slideToggle('medium');
+  }
+});
+
+$(document).click(function(e) {
+  if( e.target.id === 'logoutLi') {
+    $('#logoutBubble').fadeToggle('fast');
+    $('.arrow2').slideToggle('medium');
+  }
+});
+$(document).ready(function()
+{
+    $(document).mouseup(function(e)
+    {
+        var subject = $('#loginBubble');
+
+        if(e.target.id != subject.attr('id') && e.target.id != 'loginLi' && e.target.id != 'txtEmail' && e.target.id != 'txtPassword' )
+
+        {
+            subject.fadeOut('fast');
+            $('.arrow').slideUp('medium');
+        }
+    });
+});
+
+$(document).ready(function()
+{
+    $(document).mouseup(function(e)
+    {
+        var subject = $('#logoutBubble');
+
+        if(e.target.id != subject.attr('id') && e.target.id != 'logoutLi')
+
+        {
+            subject.fadeOut('fast');
+            $('.arrow2').slideUp('medium');
+        }
+    });
+});
+
+//hide login and logout bubbles pressing ESC
+
+$(document).on( 'keydown', function (key) {
+    if (key.keyCode === 27 ) {
+        $('#loginBubble').fadeOut('fast');
+        $('.arrow').fadeOut('fast');
+    }
+});
+
 
 (function($){
 	$(window).load(function(){
 		// INITIALIZE ANIMSITION
-		if($(".animsition").length){
-			$(".animsition").animsition({
+		if($('.animsition').length){
+			$('.animsition').animsition({
 				inClass               :   'fade-in-up-sm',
 				outClass              :   'fade-out-up-sm',
 				inDuration            :    1100,
 				outDuration           :    800,
 				linkElement           :   '.animsition-link',
 				loading               :    true,
-				loadingParentElement  :   'body', 
+				loadingParentElement  :   'body',
 				unSupportCss          : [ 'animation-duration',
 										  '-webkit-animation-duration',
 										  '-o-animation-duration'
@@ -27,12 +79,21 @@
 		}
 
 		// INPUTS EVENTS
-		$(".input_1 input, .textarea_1 textarea").focus(function(){
-			$(this).next("span").addClass("active");
+		$('.input_1 input, .textarea_1 textarea').focus(function(){
+			$(this).next('span').addClass('active');
 		});
-		$(".input_1 input, .textarea_1 textarea").blur(function(){
-			if($(this).val() === ""){
-				$(this).next("span").removeClass("active");
+		$('.input_1 input, .textarea_1 textarea').blur(function(){
+			if($(this).val() === ''){
+				$(this).next('span').removeClass('active');
+			}
+		});
+
+		$('.input_3 input, .textarea_1 textarea').focus(function(){
+			$(this).next('span').addClass('active');
+		});
+		$('.input_3 input, .textarea_1 textarea').blur(function(){
+			if($(this).val() === ''){
+				$(this).next('span').removeClass('active');
 			}
 		});
 
@@ -67,10 +128,10 @@
 			}
 		});
 
-		// NAVBAR
+		// NavBar
 		var _link = $("nav.desktop-nav ul.first-level").children("li");
 		var shown = false;
-		// show navbar 
+		// show navbar
 		$(".menu-icon").click(function(){
 			var _this = $(this);
 			$("nav.mobile-nav").slideToggle(200);
@@ -84,7 +145,7 @@
 				shown = false;
 			}
 		});
-		
+
 		// dropdown - desktop
 		_link.hover(function(e){
 			e.preventDefault();

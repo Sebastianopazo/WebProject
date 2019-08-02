@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Dashboard</title>
+    <title>Survey</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -10,12 +10,15 @@
     <link rel="stylesheet" href="assets/css/animsition.min.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/booklet/booklet.css" />
+    <script src="assets/js/booklet/modernizr.custom.js"></script>
 </head>
 <!--body-->
 <div id="overlay" class="overlay">
-  <h1>Loading...</h1>
-  <div class="loader"></div>
+    <h1>Loading...</h1>
+    <div class="loader"></div>
 </div>
+
 <body class="animsition">
     <header class="main-header">
         <div class="container">
@@ -45,7 +48,7 @@
                                 </div>
                                 <a id="btnLogin" href="#" class="btn white2"><span>Login</span></a>
                                 <p>
-                                  Forgot password?
+                                    Forgot password?
                                 </p>
                                 <div class="arrow"></div>
                         </div>
@@ -79,10 +82,10 @@
         </a>
         <div class="page-title">
             <div class="big-title montserrat-text uppercase">
-              <div id="titleName">
-              </div>
-              <div id="titleLastName">
-              </div>
+                <div id="titleName">
+                </div>
+                <div id="titleLastName">
+                </div>
             </div>
             <div class="small-title montserrat-text uppercase">HOME/Dashboard</div>
         </div>
@@ -90,41 +93,179 @@
     <!-- CONTENT -->
     <section>
         <div class="container">
-    <div class="section-title">
-        <span>Your Dashboard</span>
-    </div>
+            <div class="section-title">
+                <span>Rate your Experience</span>
+            </div>
+            <div class="col-md-8">
+    <!--Question -->
+      <div class="row">
+        <ul class="list_5">
+          <li>
+            <div>
+              <p>
+                1.- Did you find this website easy to use?
+              </p>
+              <div>
+                <input type="radio" name="radio" id="radio1" class="radio"/>
+                <label for="radio1">Very Easy</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="radio2" class="radio"/>
+                <label for="radio2">Somewhat Easy</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="radio3" class="radio"/>
+                  <label for="radio3">Somewhat Hard</label>
+                </div>
+                <div>
+                  <input type="radio" name="radio" id="radio4" class="radio"/>
+                  <label for="radio4">Very Hard</label>
+                </div>
+              </div>
+          </li>
+        </ul>
+      </div>
+    <!--End Of Question -->
+    <!--Question -->
+      <div class="row">
+        <ul class="list_5">
+          <li>
+            <div>
+              <p>
+                2.- Do you find this website convenient?
+              </p>
+              <div>
+                <input type="radio" name="radio" id="radio5" class="radio"/>
+                <label for="radio5">Yes</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="radio6" class="radio"/>
+                <label for="radio6">No</label>
+              </div>
+              </div>
+          </li>
+        </ul>
+      </div>
+    <!--End Of Question -->
+    <!--Question -->
+      <div class="row">
+        <ul class="list_5">
+          <li>
+            <div>
+              <p>
+                3.- Based on today’s visit, how would you rate the patient list and administration system?
+              </p>
+              <div>
+                <input type="radio" name="radio" id="radio1" class="radio"/>
+                <label for="radio1">Poor</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="radio2" class="radio"/>
+                <label for="radio2">Fair</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="radio3" class="radio"/>
+                  <label for="radio3">Good</label>
+                </div>
+                <div>
+                  <input type="radio" name="radio" id="radio4" class="radio"/>
+                  <label for="radio4">Very Good</label>
+                </div>
+                <div>
+                  <input type="radio" name="radio" id="radio4" class="radio"/>
+                  <label for="radio4">Excelent</label>
+                </div>
+              </div>
+          </li>
+        </ul>
+      </div>
+    <!--End Of Question -->
+    <!--Question -->
+      <div class="row">
+        <ul class="list_5">
+          <li>
+            <div>
+              <p>
+                4.- Based on today’s visit, how would you rate the “learn about FECI” (booklet) system?
+              </p>
+              <div>
+                <input type="radio" name="radio" id="radio1" class="radio"/>
+                <label for="radio1">Poor</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="radio2" class="radio"/>
+                <label for="radio2">Fair</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="radio3" class="radio"/>
+                  <label for="radio3">Good</label>
+                </div>
+                <div>
+                  <input type="radio" name="radio" id="radio4" class="radio"/>
+                  <label for="radio4">Very Good</label>
+                </div>
+                <div>
+                  <input type="radio" name="radio" id="radio4" class="radio"/>
+                  <label for="radio4">Excelent</label>
+                </div>
+              </div>
+          </li>
+        </ul>
+      </div>
+    <!--End Of Question -->
+    <!--Question -->
+      <div class="row">
+        <ul class="list_5">
+          <li>
+            <div>
+              <p>
+                5.- Based on today’s visit, how would you rate your site experience overall?
+              </p>
+              <div>
+                <input type="radio" name="radio" id="radio1" class="radio"/>
+                <label for="radio1">Poor</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="radio2" class="radio"/>
+                <label for="radio2">Fair</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="radio3" class="radio"/>
+                  <label for="radio3">Good</label>
+                </div>
+                <div>
+                  <input type="radio" name="radio" id="radio4" class="radio"/>
+                  <label for="radio4">Very Good</label>
+                </div>
+                <div>
+                  <input type="radio" name="radio" id="radio4" class="radio"/>
+                  <label for="radio4">Excelent</label>
+                </div>
+              </div>
+          </li>
+        </ul>
+      </div>
+    <!--End Of Question -->
+    <!--Question -->
+      <div class="row">
+        <ul class="list_5">
+          <li>
+            <div>
+              <p>
+                General Feedback
+              </p>
+              <div>
+                <input class="textarea_1" type="text"/>
+              </div>
+              </div>
+          </li>
+        </ul>
+      </div>
+    <!--End Of Question -->
+    <a href="#"class="btn green2"><span>Submit Feedback</span></a>
   </div>
-    <div class="col-md-12 col-md-offset-3">
-      <div class="col-md-3">
-        <div id="learn" class="text-center">
-          <h2>LEARN</h2>
-          <a href="learn.html" class="tooltips_item3 wow fadeInUp">
-            <img src="images/learn.png" alt="">
-            <div class="tooltips_item_hover">
-              <div class="item_info">
-                <span>LEARN ABOUT FECI</span>
-                <em>MORE</em>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div id="yourPatients" class="text-center">
-          <h2>PATIENTS</h2>
-          <a href="patients.html" class="tooltips_item3 wow fadeInUp">
-            <img src="images/patients.png" alt="">
-            <div class="tooltips_item_hover">
-              <div class="item_info">
-                <span>Your Patients List</span>
-                <em>MORE</em>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    </section>
+  </div>
+</section>
     <!-- signup Info -->
     <section id="signupInfo" class="green-section wow fadeInUp" style="padding:50px 0">
         <div class="container">
@@ -210,7 +351,7 @@
         </div>
     </section>
     <!-- FOOTER -->
-    <footer class="main-footer">
+    <footer class="main-footer wow fadeInUp">
         <div class="container">
             <div class="col-md-8 col-sm-12">
                 <div class="row">
@@ -238,20 +379,20 @@
             </div>
         </div>
     </footer>
-	<!-- SCRIPTS -->
-	<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
-	<script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
-	<script type="text/javascript" src="assets/js/wow.min.js"></script>
-	<script type="text/javascript" src="assets/js/main.js"></script>
-	<script type="text/javascript" src="assets/js/fecianalyst.js"></script>
-	<script type="text/javascript">
-		$(window).load(function() {
-			new WOW().init();
-		});
-	</script>
-	<script type="text/javascript">
-</script>
+    <!-- SCRIPTS -->
+    <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.animsition.min.js"></script>
+    <script type="text/javascript" src="assets/js/wow.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/fecianalyst.js"></script>
+    <script src="assets/js/booklet/jquerypp.custom.js"></script>
+    <script src="assets/js/booklet/jquery.booklet.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            new WOW().init();
+        });
+    </script>
 
 
 </body>
